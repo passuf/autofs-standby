@@ -1,0 +1,2 @@
+vault -fstype=ext4 :/dev/disk/by-uuid/20fd4075-06f4-4dff-b3b4-fda98b244809
+
