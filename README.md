@@ -11,7 +11,7 @@ Monitors the state of an autofs share and puts USB hubs into standby mode whenev
 1. Create the directory where the share is mounted: `sudo mkdir /autofs`
 1. Adjust the uuid of the drive to `./auto.vault.sh` (can be checked with `sudo lsblk -f`)
 1. Copy the files `./auto.vault` and `./auto.vault.sh` to `/etc` and chown them to root
-1. Add the following line to `/etc/auto.master`: /autofs program:/etc/auto.vault.sh --timeout=300 --ghost
+1. Add the following line to `/etc/auto.master`: `/autofs program:/etc/auto.vault.sh --timeout=300 --ghost` (make sure there is an empty line at the end of the config, otherwise the daemon will not load properly)
 1. Restart `autofs`: `sudo service autofs restart`
 
 ### Create a Standby Watchdog Service
