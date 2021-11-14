@@ -1,5 +1,8 @@
 # autofs-standby
-Monitors the state of an autofs share and puts USB hubs into standby mode whenever possible
+Monitors the state of an autofs share and puts USB hubs into standby mode whenever possible.
+
+> :warning: **Please note**: This is an experimental prototype for my very specific setup (Raspberry Pi 4 + Fantec QB-35US3R (4 x 3.5") RAID). If you inted to use this with your own setup, make sure not to power-off any USB devices while performing critical operations.
+
 
 
 ## Installation
@@ -23,8 +26,8 @@ Monitors the state of an autofs share and puts USB hubs into standby mode whenev
 
 ## Testing / Troubleshooting
 1. Check if USB can be powered on and off using `uhubctl`:
-1.1 power on: `sudo uhubctl -l 1-1 -a on`
-1.1 power off: `sudo uhubctl -l 1-1 -a off`
+    1. power on: `sudo uhubctl -l 1-1 -a on`
+    1. power off: `sudo uhubctl -l 1-1 -a off`
 1. Access the share: `ls -la /autofs/vault`
 1. Monitor `standby_watchdog.service` to see if the mounted share is detected.
 1. Wait the timeout specified in `auto.vault.sh` and try to access the share again.
